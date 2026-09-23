@@ -41,7 +41,7 @@ function ClientLogo({ client, color }) {
 
 export default function LiveMonitoringTable() {
   return (
-    <div className="mx-auto w-full  rounded-2xl border border-slate-200 bg-white p-5 shadow-sm pb-20">
+    <div className="mx-auto w-full  rounded-sm border border-slate-200 bg-white p-5 shadow-sm pb-20">
       {/* Header */}
       <div className="mb-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
@@ -49,9 +49,9 @@ export default function LiveMonitoringTable() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
           </span>
-          <h2 className="text-sm font-semibold text-slate-900">Live now</h2>
+          <h2 className="text-lg font-semibold ">Live now</h2>
         </div>
-        <span className="rounded-full bg-violet-50 px-3 py-1 text-xs font-medium text-violet-600">
+        <span className="rounded-full bg-secondary px-3 py-1 text-sm font-medium text-primary">
           {rows.length} in progress
         </span>
       </div>
@@ -59,13 +59,13 @@ export default function LiveMonitoringTable() {
       {/* Table */}
       <div className="overflow-x-auto">
         <table className="w-full border-collapse text-left">
-          <thead className="bg-[#F1F5F9]">
+          <thead className="bg-[#f7f8fd]">
             <tr className="border-b border-slate-100 ">
               {["Req ID", "Client", "Title", "Candidate", "Manager", "Recruiter", "Started", "Cameras", ""].map(
                 (col) => (
                   <th
                     key={col}
-                    className="whitespace-nowrap px-3 py-4 text-xs font-medium text-slate-400"
+                    className="whitespace-nowrap px-3 py-4 text-sm font-semibold text-slate-500"
                   >
                     {col}
                   </th>
@@ -112,7 +112,7 @@ export default function LiveMonitoringTable() {
                   </div>
                 </td>
                 <td className="whitespace-nowrap px-3 py-3 text-right">
-                  <button className="rounded-lg border border-violet-200 px-4 py-1.5 text-xs font-semibold text-violet-600 transition-colors hover:bg-violet-50">
+                  <button className="rounded-sm border border-primary px-4 py-1.5 text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-white">
                     Monitor
                   </button>
                 </td>

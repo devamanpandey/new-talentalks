@@ -18,19 +18,27 @@ import {
   AvatarFallback,
 } from "@/components/ui/avatar"
 
+import bubbleBg from "@/assets/bubble-bg.svg"
+
 export default function Layout({ children }) {
   return (
     <SidebarProvider>
       <AppSidebar />
 
-      <SidebarInset className="bg-[#f8f9fc]">
+      <SidebarInset className="relative overflow-hidden bg-[#f8f9fc]">
 
-        {/* Header */}
-        <header className=" border-b py-5 bg-white">
+        <img
+          src={bubbleBg}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute top-0 right-0 z-10 h-auto select-none"
+        />
+
+        <header className="relative   border-b py-4 bg-white">
           <div className="flex h-full items-center justify-between px-6">
 
             {/* Search */}
-            <div className="relative w-[365px]">
+            <div className="relative w-[570px]">
               <Search
                 className="
                   absolute
@@ -45,13 +53,14 @@ export default function Layout({ children }) {
               <Input
                 placeholder="Search candidates, jobs, interviews, or type / to navigate..."
                 className="
-                  h-8
+                  h-10
                   pl-9
                   text-xs
                   shadow-none
                   placeholder:text-slate-400
                   focus-visible:ring-1
                   focus-visible:ring-violet-200
+                  rounded-sm
                 "
               />
             </div>
@@ -91,8 +100,8 @@ export default function Layout({ children }) {
           </div>
         </header>
 
-        {/* Page content */}
-        <main className="flex-1">
+        {/* Page content — also above the bubble */}
+        <main className="relative z-10 flex-1">
           {children}
         </main>
 

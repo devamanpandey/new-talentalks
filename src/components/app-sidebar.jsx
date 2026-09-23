@@ -13,13 +13,16 @@ import {
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import Logo from "@/assets/logo.png";
 import { sideBarItems } from "@/lib/data";
+import { Link } from "react-router";
+import { useLocation } from "react-router";
 
 export function AppSidebar({ user, onSignOut }) {
+  const location = useLocation()
   return (
     <Sidebar>
-      <SidebarHeader className="px-4 py-5">
+      <SidebarHeader className="p-4 pt-5">
         <div className="flex items-center gap-2">
-          <img src={Logo} alt="Logo" className="h-8 w-auto"  />
+          <img src={Logo} alt="Logo" className="h-8 w-auto" />
         </div>
       </SidebarHeader>
 
@@ -29,14 +32,17 @@ export function AppSidebar({ user, onSignOut }) {
             <SidebarMenu>
               {sideBarItems.map((item) => {
                 return (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton
-                      asChild
-                      className="gap-4 text-base font-[400] py-6 text-[#223180] active:font-medium hover:font-medium"
-                    >
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </SidebarMenuButton>
+                  <SidebarMenuItem key={item.title} className={'py-1'}>
+                    <Link to={item?.url}>
+                      <SidebarMenuButton
+                        asChild
+                        isActive={location.pathname===item?.url}
+                        className="gap-4 text-base font-[400] py-5 text-[#223180] active:font-medium hover:font-medium"
+                      >
+                        <item.icon />
+                        <span>{item.title}</span>
+                      </SidebarMenuButton>
+                    </Link>
                   </SidebarMenuItem>
                 );
               })}
@@ -45,8 +51,8 @@ export function AppSidebar({ user, onSignOut }) {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="border-t px-4 py-4">
-        <div className="flex items-center gap-3 mb-3">
+      <SidebarFooter className=" px-4 ">
+        <div className="flex  items-center gap-3 mb-3 border-t border-dotted pt-5">
           <Avatar className="h-9 w-9">
             <AvatarFallback className="bg-primary text-primary-foreground">
               {user?.initials ?? "JN"}

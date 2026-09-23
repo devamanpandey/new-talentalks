@@ -1,4 +1,4 @@
-import { Calendar, Clock, Briefcase, Video } from "lucide-react";
+import {  Clock, Briefcase, Video ,CalendarDays} from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -28,7 +28,7 @@ export default function App() {
     },
     {
       id: 3,
-      icon: Clock,
+      icon: CalendarDays,
       label: "Interviews - Today",
       value: "4",
       subtext: "Pending, not yet started →",
@@ -36,18 +36,15 @@ export default function App() {
     },
     {
       id: 4,
-      icon: Calendar,
+      icon: Clock,
       label: "Interviews - Upcoming",
       value: "6",
       subtext: "Scheduled ahead →",
       isActive: false,
     },
   ];
-
-
   return (
     <div className="min-h-screen p-8">
-      {/* Header */}
       <div className="mb-8 flex items-start justify-between">
         <div>
           <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">
@@ -71,8 +68,7 @@ export default function App() {
         </Select>
       </div>
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4  gap-4 mb-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4  gap-4 mb-8">
         {stats.map((stat) => {
           const IconComponent = stat.icon;
           return (
@@ -85,15 +81,9 @@ export default function App() {
               }`}
             >
               <div className="flex items-center gap-3 mb-4">
-                <div
-                  className={`p-2 rounded-lg ${
-                    stat.isActive ? "bg-blue-50" : "bg-slate-50"
-                  }`}
-                >
+                <div className={`p-2 rounded-lg bg-secondary `}>
                   <IconComponent
-                    className={`w-5 h-5 ${
-                      stat.isActive ? "text-blue-600" : "text-slate-600"
-                    }`}
+                    className={`w-5 h-5 text-primary`}
                   />
                 </div>
                 <h3 className="text-xs font-medium text-slate-600">
