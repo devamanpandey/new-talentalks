@@ -1,0 +1,321 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* ================================
+     FONT
+  ================================= */
+
+
+  --font-heading: var(--font-sans);
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+
+  /* ================================
+     CORE COLORS
+  ================================= */
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* ================================
+     TALENT TALKS COLORS
+  ================================= */
+
+  --color-brand: #4b1498;
+  --color-brand-light: #a66fff;
+  --color-brand-dark: #3d0f7d;
+
+  --color-lavender: #f0ebff;
+  --color-lavender-light: #f7f4ff;
+
+  --color-navy: #191f2d;
+
+  --color-success: #00b86b;
+
+  --color-muted-text: #65718a;
+
+  /* ================================
+     CHART COLORS
+  ================================= */
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* ================================
+     SIDEBAR
+  ================================= */
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* ================================
+     RADIUS
+  ================================= */
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* =========================================================
+   LIGHT THEME — FIGMA
+========================================================= */
+
+:root {
+  /* Page */
+  --background: #F8FAFD;
+  --foreground: #191f2d;
+
+  /* Cards */
+  --card: #F8FAFD;
+  --card-foreground: #191f2d;
+
+  /* Popovers / Dropdowns */
+  --popover: #F8FAFD;
+  --popover-foreground: #191f2d;
+
+  /* ================================
+     PRIMARY PURPLE
+  ================================= */
+
+  --primary: #4b1498;
+  --primary-foreground: #ffffff;
+
+  /* ================================
+     SECONDARY
+  ================================= */
+
+  --secondary: #f0ebff;
+  --secondary-foreground: #4b1498;
+
+  /* ================================
+     MUTED
+  ================================= */
+
+  --muted: #f5f3fb;
+  --muted-foreground: #65718a;
+
+  /* ================================
+     ACCENT
+  ================================= */
+
+  --accent: #f0ebff;
+  --accent-foreground: #4b1498;
+
+  /* ================================
+     STATES
+  ================================= */
+
+  --destructive: #dc3545;
+
+  /* ================================
+     BORDERS
+  ================================= */
+
+  --border: #e8e4f4;
+  --input: #e8e4f4;
+
+  --ring: #a66fff;
+
+  /* ================================
+     CHARTS
+  ================================= */
+
+  --chart-1: #4b1498;
+  --chart-2: #a66fff;
+  --chart-3: #6e32c4;
+  --chart-4: #c4a5ff;
+  --chart-5: #191f2d;
+
+  /* ================================
+     SIDEBAR
+  ================================= */
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #191f2d;
+
+  --sidebar-primary: #4b1498;
+  --sidebar-primary-foreground: #ffffff;
+
+  --sidebar-accent: #f0ebff;
+  --sidebar-accent-foreground: #4b1498;
+
+  --sidebar-border: #e8e4f4;
+  --sidebar-ring: #a66fff;
+
+  /* ================================
+     GLOBAL RADIUS
+  ================================= */
+
+  --radius: 0.75rem;
+}
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+.dark {
+  --background: #15121c;
+  --foreground: #f8f7ff;
+
+  --card: #211c2b;
+  --card-foreground: #f8f7ff;
+
+  --popover: #211c2b;
+  --popover-foreground: #f8f7ff;
+
+  --primary: #a66fff;
+  --primary-foreground: #191f2d;
+
+  --secondary: #302442;
+  --secondary-foreground: #f8f7ff;
+
+  --muted: #2b2536;
+  --muted-foreground: #aaa1bc;
+
+  --accent: #302442;
+  --accent-foreground: #a66fff;
+
+  --destructive: #ef5350;
+
+  --border: #3b3348;
+  --input: #3b3348;
+
+  --ring: #a66fff;
+
+  --chart-1: #a66fff;
+  --chart-2: #4b1498;
+  --chart-3: #c4a5ff;
+  --chart-4: #6e32c4;
+  --chart-5: #ffffff;
+
+  --sidebar: #19151f;
+  --sidebar-foreground: #f8f7ff;
+
+  --sidebar-primary: #a66fff;
+  --sidebar-primary-foreground: #191f2d;
+
+  --sidebar-accent: #302442;
+  --sidebar-accent-foreground: #a66fff;
+
+  --sidebar-border: #3b3348;
+  --sidebar-ring: #a66fff;
+}
+
+/* =========================================================
+   BASE
+========================================================= */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+    font-size: 16px;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    letter-spacing: -0.01em;
+    font-size: 16px;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+  }
+}
+
+/* =========================================================
+   FIGMA UTILITIES
+========================================================= */
+
+@layer utilities {
+  .text-brand {
+    color: #4b1498;
+  }
+
+  .text-brand-light {
+    color: #a66fff;
+  }
+
+  .text-navy {
+    color: #191f2d;
+  }
+
+  .text-muted {
+    color: #65718a;
+  }
+
+  .bg-brand {
+    background-color: #4b1498;
+  }
+
+  .bg-brand-light {
+    background-color: #a66fff;
+  }
+
+  .bg-lavender {
+    background-color: #f0ebff;
+  }
+
+  .bg-page {
+    background-color: #fafaff;
+  }
+
+  .border-brand {
+    border-color: #4b1498;
+  }
+
+  .border-soft {
+    border-color: #e8e4f4;
+  }
+}
